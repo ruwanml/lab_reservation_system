@@ -1,0 +1,48 @@
+<mat-card-header>
+    <mat-toolbar class="toolbar">
+      <mat-card-title>Make a Reservation</mat-card-title>
+      <span class="toolbar-spacer"></span>
+      <button class="btn btn-success btn-xl" (click)="onNoClick()">Cancel</button>
+    </mat-toolbar>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="container">
+      <form [formGroup]="_contactForm" (submit)="onSubmit()">
+        <div class="form-group">
+          <div class="row">
+              <div class="col-md-12">
+                <label>Date</label>
+                <input type="date" formControlName="FirstName" class="form-control">
+              </div>
+              <div class="col-md-12">
+                <label>Start Time</label>
+                <input type="time" formControlName="LastName" class="form-control">
+              </div>
+              <div class="col-md-12">
+                <label>End Time</label>
+                <input type="time" formControlName="Contact" class="form-control">
+              </div>
+              <div class="col-md-12">
+                <label>Laboratory</label>
+                <!-- <input type="text" formControlName="Contact" class="form-control"> -->
+                <select input type="text" formControlName="Email" class="form-control">
+                    <option>Lab A</option>
+                    <option>Lab B</option>
+                    <option>Lab C</option>
+                    <option>MSc Lab</option>
+                    <option>Electronic Lab</option>
+                </select>
+              </div>
+          </div><br>
+          
+  
+          <div class="row">
+            <div class="col-md-6">
+            <button type="submit" class="btn btn-success btn-xl"  >Submit</button>
+            </div>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </mat-card-content>

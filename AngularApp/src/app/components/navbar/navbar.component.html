@@ -1,0 +1,62 @@
+
+<!--
+<nav *ngIf="nav.visible" class="navbar navbar-expand-lg navbar-light bg-dark">
+ 
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color:white; font-size:30px; font-weight: 500;">UCSC Lab Reservation System</a>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/']">Home</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right  "  >
+        
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']"  >Dashboard </a></li>
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/profile']" >Profile </a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']" >Login</a></li>
+        <li><a (click)="onLogoutClick()" href="#" >Logout</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  
+
+<nav *ngIf="nav.visible" class="navbar navbar-expand-lg navbar-light bg-dark">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" style="color:white; font-size:30px; font-weight: 500;">Online Computer Lab Reservation System</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    
+      <ul class="nav  mr-auto mt-2 mr-auto   ">
+        
+        <li *ngIf="!authService.loggedIn()">
+          <a class="nav-link"  [routerLink]="['/']">Home</a>
+        </li>
+
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}" class="nav-item active">
+          <a class="nav-link"  [routerLink]="['/dashboard']">Dashboard </a>
+        </li>
+
+        <li *ngIf="authService.loggedIn()" class="nav-item active">
+          <a class="nav-link"  [routerLink]="['/profile']">Profile </a>
+        </li>
+
+        <li  *ngIf="!authService.loggedIn()" class="nav-item active">
+          <a class="nav-link"  [routerLink]="['/register']">Register </a>
+        </li>
+
+        <li *ngIf="!authService.loggedIn()" class="nav-item active"  >
+          <a class="nav-link"  [routerLink]="['/login']">Login </a>
+        </li>
+
+        <li *ngIf="authService.loggedIn()">
+          <a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
+        </li>
+      </ul>
+    
+    </div>
+  </nav>
